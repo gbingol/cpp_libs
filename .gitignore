@@ -1,4 +1,9 @@
 build/
+.vscode/
+.cache/
+outdir/
+
 *.exe
 *.pdb
-.vscode/
+*.ilk
+compile_commands.json

@@ -1,11 +1,6 @@
 cmake_minimum_required(VERSION 3.27.2)
 set(CMAKE_CXX_STANDARD 17)
 
+project(cpplibs)
 
-project(jsonparser)
-
-SET(CMAKE_RUNTIME_OUTPUT_DIRECTORY_RELEASE ${CMAKE_CURRENT_SOURCE_DIR})
-SET(CMAKE_RUNTIME_OUTPUT_DIRECTORY_DEBUG ${CMAKE_CURRENT_SOURCE_DIR})
-
-
-add_executable(${PROJECT_NAME} main.cpp json.cpp)
+add_subdirectory(jsonparser)

@@ -1,9 +1,11 @@
 #include <iostream>
+#include <filesystem>
 #include "json.h"
 
 int main()
 {
-	JSON::JSON json(std::filesystem::path("testfiles/widgets.json"));
+	//exe is in outdir directory
+	JSON::JSON json(std::filesystem::path("../jsonparser/testfiles/widgets.json"));
 	JSON::Error err;
 	auto v = json.Parse(err);
 
