@@ -3,5 +3,11 @@ set(CMAKE_CXX_STANDARD 17)
 
 project(cpplibs)
 
+SET(CMAKE_RUNTIME_OUTPUT_DIRECTORY_RELEASE ${CMAKE_SOURCE_DIR}/outdir)
+SET(CMAKE_RUNTIME_OUTPUT_DIRECTORY_DEBUG ${CMAKE_SOURCE_DIR}/outdir)
+SET(CMAKE_ARCHIVE_OUTPUT_DIRECTORY_RELEASE  ${CMAKE_SOURCE_DIR}/outdir)
+
+set(CMAKE_DEBUG_POSTFIX "_d")
+
 add_subdirectory(jsonparser)
-add_subdirectory(stringtofloat)
+add_subdirectory(stringtonumber)
