@@ -4,3 +4,4 @@ set(CMAKE_CXX_STANDARD 17)
 project(cpplibs)
 
 add_subdirectory(jsonparser)
+add_subdirectory(stringtofloat)
