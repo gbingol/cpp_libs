@@ -55,8 +55,6 @@ void generateProject(const std::string& projName)
 		std::cout << "Initializing Git repository...\n";
 		execCmd("git init");
 
-		execCmd("hey there");
-
 		if(isVcpkgInstalled())
 		{
 			// 3. Add vcpkg support
