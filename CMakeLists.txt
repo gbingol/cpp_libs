@@ -11,3 +11,4 @@ set(CMAKE_DEBUG_POSTFIX "_d")
 
 add_subdirectory(jsonparser)
 add_subdirectory(stringtonumber)
+add_subdirectory(cppmngr)
