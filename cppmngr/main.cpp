@@ -79,9 +79,9 @@ int main(int argc, char* argv[])
 {
 	std::vector<std::string> args(argv, argv + argc);
 
-	if (args.size() < 3 || args[1] != "--new") 
+	if (args.size() < 3 || args[1] != "new") 
 	{
-		std::cout << "Usage: " << args[0] << " --new <project_name> \n";
+		std::cout << "Usage: " << args[0] << " new <project_name> \n";
 		return 1;
 	}
 
