@@ -5,7 +5,7 @@
 &nbsp;
 
 ```sh
-cppmngr --new myproject
+cppmngr new myproject
 ```
 
 Generates *myproject* folder with:
