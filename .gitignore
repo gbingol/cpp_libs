@@ -7,3 +7,9 @@ outdir/
 *.pdb
 *.ilk
 compile_commands.json
+
+*.dll
+*.exe
+*.pyd
+*.pyc
+*.db
