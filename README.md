@@ -10,9 +10,5 @@
   
 - **Result class**: Rust inspired templated Result class to return *Ok* or *Err*.
 
+- **Bisection**: A generic, type-safe bisection root finding method.
 
-&nbsp;&nbsp;
-
----
-
-**NOTE:** Please note that each sub-project has its own readme file, where you can find more information.
