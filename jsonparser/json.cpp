@@ -2,8 +2,9 @@
 
 #include <assert.h>
 #include <fstream>
+#include <iterator>
 #include <sstream>
-
+#include <stdexcept>
 
 
 namespace JSON
@@ -28,11 +29,11 @@ namespace JSON
 	JSON::JSON(std::filesystem::path path)
 	{
 		if (!std::filesystem::exists(path))
-			throw std::exception("File does not exist");
+			throw std::runtime_error("File does not exist");
 
 		std::ifstream file(path, std::ios::in);
 		if (!file.is_open())  
-			throw std::exception("Failed to open file");
+			throw std::runtime_error("Failed to open file");
 	
 		for (std::string Line; std::getline(file, Line);)
 			m_Content.append(Line);
@@ -113,13 +114,13 @@ namespace JSON
 			}
 
 			if(Token.type()!= Token.STR)
-				throw std::exception("Invalid key in object");
+				throw std::runtime_error("Invalid key in object");
 
 			auto key = std::get<std::string>(Token.value());
 			lex.move(1);
 			auto Column = lex.cur();
 			if(Column.type() != Column.DELIM || std::get<std::string>(Column.value())!=":")
-				throw std::exception("Object assignments require : sign");
+				throw std::runtime_error("Object assignments require : sign");
 
 			lex.move(1);
 			auto valTok = lex.cur();
@@ -230,7 +231,8 @@ namespace JSON
 		
 		else
 		{
-			auto Last = (--obj.m_Data.end());
+			//was using (--obj.m_Data.end())
+			auto Last = std::prev(obj.m_Data.end());
 			
 			for (auto iter = std::begin(obj.m_Data); iter != std::end(obj.m_Data); ++iter)
 			{
@@ -284,7 +286,7 @@ namespace JSON
 		size_t len = _Text.length();
 
 		if (_Text.empty()) 
-			throw std::exception("Empty string cannot be tokenized.");
+			throw std::runtime_error("Empty string cannot be tokenized.");
 
 		for (size_t index = 0; index < len; ++index)
 		{
@@ -337,7 +339,7 @@ namespace JSON
 					tokenStr += c;
 
 					if (index == _Text.length())
-						throw std::exception("Parse error while searching for \" or \'");
+						throw std::runtime_error("Parse error while searching for \" or \'");
 				}
 
 				m_Tokens.emplace_back(CToken::STR, tokenStr);
