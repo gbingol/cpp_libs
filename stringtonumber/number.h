@@ -3,6 +3,7 @@
 #include <math.h>
 #include <string_view>
 #include <stdexcept>
+#include <cstdint>
 
 
 inline int CharToInt(char c)
@@ -28,7 +29,7 @@ inline T tonumber(std::string_view s)
 	T DotFactor{1.0};
 
 	//Sign of exponent and significand, By default positive
-	std::int8_t SignExpon{1}, SignSgnf{1};
+	int8_t SignExpon{1}, SignSgnf{1};
 
 	int i=0;
 
