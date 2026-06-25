@@ -2,7 +2,7 @@
 
 #include <string>
 #include <filesystem>
-
+#include <vector>
 
 
 bool writeFile(const std::filesystem::path &filePath, std::string_view content);
