@@ -22,7 +22,7 @@ struct bisect_res
 
 
 template <Real T>
-Result<bisect_res<T>, std::string> bisection_bf(const std::function<T(T)>& func,
+Result<bisect_res<T>, std::string> bisect(const std::function<T(T)>& func,
 	T a,
 	T b,
 	T TOLERANCE,

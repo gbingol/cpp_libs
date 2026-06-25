@@ -20,7 +20,7 @@ int main() {
 	FLOAT root;
 	for(std::size_t i=0; i<5000; i++)
 	{
-		auto res = bisection_bf<FLOAT>(f, (FLOAT)0.0, (FLOAT)3.0, (FLOAT)1E-6, 500);
+		auto res = bisect<FLOAT>(f, (FLOAT)0.0, (FLOAT)3.0, (FLOAT)1E-6, 500);
 		if(auto p = res.get_if())
 			root = p->Root;
 	}
